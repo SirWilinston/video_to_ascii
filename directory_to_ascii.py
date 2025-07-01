@@ -5,7 +5,7 @@ import pathlib
 
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", ".", " "]
 ASCII_CHARS.reverse()
-directorio_jpg = "DarkSouls"
+directorio_jpg = # change this to the name you want for your ascii art directory
 
 def resize_image(image, new_width):
     width, height = image.size
