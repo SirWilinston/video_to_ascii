@@ -7,11 +7,11 @@ from threading import Thread
 
 colorama.init()
 
-path = "ascii/DarkSouls"
+path = "ascii/*" # Change the * to the name of your ascii art directory
 items = natsorted(os.listdir(path))
-target_fps = 60
+target_fps = 60 # Change this to the video frame rate
 frame_time = 1.0 / target_fps
-audio_file = "audio/DON'T YOU DARE GO HOLLOW.mp3"
+audio_file = "audio/*.mp3" # Change the * to the name of the audio
 
 frames = []
 for item in items:
