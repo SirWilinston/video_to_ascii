@@ -1,6 +1,6 @@
-import cv2 #Para pasar dividir el video en frames
+import cv2
 import os
-from tkinter import filedialog
+from tkinter import filedialog 
 import pathlib
 import ffmpeg
 
