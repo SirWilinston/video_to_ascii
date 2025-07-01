@@ -7,9 +7,9 @@ import ffmpeg
 def video_to_frames(rutaVideo, rutaGuardado):
     try:
         capture = cv2.VideoCapture(rutaVideo)
-        print("Video abierto correctamente")
+        print("Video loaded correctly")
     except Exception as e:
-        print(f"Error al abrir el video: {e}")
+        print(f"Error opening the video: {e}")
 
     f = 0
 
@@ -19,9 +19,9 @@ def video_to_frames(rutaVideo, rutaGuardado):
 
         if ret == False:
             if f == 0:
-                print("Error al procesar el video :(")
+                print("Error procesing the video :(")
                 break
-            print("El proceso ha finalizado")
+            print("Video procesing finished")
             break
         
         cv2.imwrite(f"{rutaGuardado}/{str(f)}.jpg", frame)
@@ -33,8 +33,8 @@ if __name__ == "__main__":
     path = ""
 
     file_path = filedialog.askopenfilename(
-            initialdir="./",  # Optional: Set initial directory
-            title="Seleccione el video para sacar los frames",
+            initialdir="./",
+            title="Select video",
         )
 
     current = str(pathlib.Path(__file__).parent.resolve()).replace("\\","/")
@@ -55,7 +55,7 @@ if __name__ == "__main__":
             print(f"Error {e}")
 
     if path != "":
-        print("Ruta del video recolactada con éxito")
+        print("Path correct")
         (
             ffmpeg.input(path)
             .output(ruta_guardado.replace("output","audio") + ".mp3")
